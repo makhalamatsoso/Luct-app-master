@@ -138,20 +138,6 @@ export default function Home({ navigation }) {
       {/* Action Buttons */}
       <View style={styles.buttons}>
         <TouchableOpacity
-          style={[styles.btn, { backgroundColor: isDark ? '#1e40af' : '#3b82f6' }]}
-          onPress={() => navigation.navigate('Programs')}
-        >
-          <Text style={styles.btnText}>Explore All Programmes</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.btn, { backgroundColor: isDark ? '#1e40af' : '#3b82f6' }]}
-          onPress={() => navigation.navigate('Requirements')}
-        >
-          <Text style={styles.btnText}>Check Entry Requirements</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
           style={[styles.enrolBtn, { backgroundColor: isDark ? '#047857' : '#10b981' }]}
           onPress={openWebsite}
         >

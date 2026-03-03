@@ -9,8 +9,8 @@ import { Ionicons } from '@expo/vector-icons';
 import Home from './screens/Home';
 import Faculty from './screens/Faculty';
 import Quizzes from './screens/Quizzes';
-import Programs from './screens/Programs';      // Fixed path
-import Requirements from './screens/Requirements'; // Fixed path
+import Programs from './screens/Programs';
+import Requirements from './screens/Requirements';
 
 const Tab = createBottomTabNavigator();
 
@@ -98,6 +98,7 @@ function Tabs() {
         })}
       >
         <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Faculty" component={Faculty} />
         <Tab.Screen name="Quizzes" component={Quizzes} />
       </Tab.Navigator>
     </Pressable>
