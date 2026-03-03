@@ -14,19 +14,30 @@ export default function Home({ navigation }) {
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  const logoUrl = 'https://seeklogo.com/images/L/limkokwing-university-logo-9E8E8E8E8E-seeklogo.com.png';
-
-  // Placeholder images inspired by your prospectus description (replace with real ones from campus social media or assets)
+  const logoUrl =
+    'https://www.gov.ls/wp-content/uploads/2022/05/limkokwing.jpeg';
   const images = {
-    globeFlags: 'https://via.placeholder.com/600x300/003366/FFFFFF?text=Global+Globe+with+Flags+150+Countries',
-    fashionStudio: 'https://via.placeholder.com/600x350/4B0082/FFFFFF?text=Fashion+Studio+Students+at+Work',
-    groupDiscussion: 'https://via.placeholder.com/600x350/228B22/FFFFFF?text=Creative+Students+Collaborating',
-    campusInnovation: 'https://via.placeholder.com/600x300/000080/FFFFFF?text=Limkokwing+Maseru+Campus+Innovation',
+    // Black African students on campus together
+    globeFlags:
+      'https://www.pula24.co.bw/wp-content/uploads/2022/01/limko-5.jpg',
+
+    // African student working creatively / design
+    fashionStudio:
+      'https://tacit-knowledge-architecture.com/wp-content/uploads/2022/10/6-1.jpg',
+
+    // Black students collaborating / group discussion
+    groupDiscussion:
+      'http://limkokwing.ac.ls/subpanel/images/facilities_004.jpg',
+
+    // African university / modern campus building
+    campusInnovation:
+      'https://tse2.mm.bing.net/th/id/OIP.zym4M6nsyo0tZwY5-UDuuwHaE7?rs=1&pid=ImgDetMain&o=7&rm=3',
   };
 
   const openWebsite = () => {
-    // Using a current working link to Lesotho page (old .ac.ls seems archived)
-    Linking.openURL('https://www.limkokwing.com/page/lesotho').catch(err => console.error(err));
+    Linking.openURL('https://www.limkokwing.com/page/lesotho').catch(err =>
+      console.error(err),
+    );
   };
 
   return (
@@ -37,46 +48,69 @@ export default function Home({ navigation }) {
       {/* Logo */}
       <Image source={{ uri: logoUrl }} style={styles.logo} resizeMode="contain" />
 
-      {/* Headline from prospectus */}
+      {/* Headline */}
       <Text style={[styles.headline, { color: isDark ? '#f1f5f9' : '#0f172a' }]}>
         BE THE BEST{'\n'}BE A LIMKOKWING GRADUATE
       </Text>
 
-      {/* Hero image + global appeal */}
-      <Image source={{ uri: images.globeFlags }} style={styles.heroImage} resizeMode="cover" />
+      {/* Hero image — African students on campus */}
+      <Image
+        source={{ uri: images.globeFlags }}
+        style={styles.heroImage}
+        resizeMode="cover"
+      />
+
       <Text style={[styles.intro, { color: isDark ? '#cbd5e1' : '#334155' }]}>
-        Immerse yourself in a melting pot of cultures with over 30,000 creative minds from 150+ countries across 3 continents.
+        Immerse yourself in a melting pot of cultures with over 30,000 creative minds
+        from 150+ countries across 3 continents.
       </Text>
 
-      {/* Benefits section - matched to your text */}
+      {/* Benefits section */}
       <View style={styles.benefits}>
         <Text style={[styles.benefitTitle, { color: isDark ? '#60a5fa' : '#2563eb' }]}>
           Be the Best...
         </Text>
 
         <Text style={[styles.benefit, { color: isDark ? '#e2e8f0' : '#1e293b' }]}>
-          • In your sphere of studies — design, business or architecture. All programmes crafted to encourage creative & critical thinking. Collaborate with industry leaders for the distinct Limkokwing advantage.
+          • In your sphere of studies — design, business or architecture. All programmes
+          crafted to encourage creative & critical thinking. Collaborate with industry
+          leaders for the distinct Limkokwing advantage.
         </Text>
         <Text style={[styles.benefit, { color: isDark ? '#e2e8f0' : '#1e293b' }]}>
-          • Trained to succeed — Adapt & thrive in competitive, globalized society. Incubation units for innovative solutions to industry challenges.
+          • Trained to succeed — Adapt & thrive in competitive, globalized society.
+          Incubation units for innovative solutions to industry challenges.
         </Text>
         <Text style={[styles.benefit, { color: isDark ? '#e2e8f0' : '#1e293b' }]}>
-          • To nurture & build your future — Accomplished professionals help you acquire skills for high-income careers.
+          • To nurture & build your future — Accomplished professionals help you acquire
+          skills for high-income careers.
         </Text>
         <Text style={[styles.benefit, { color: isDark ? '#e2e8f0' : '#1e293b' }]}>
-          • In digital & creative skills — From augmented reality & touchscreen consoles to 3D printers — creativity is your only limit.
+          • In digital & creative skills — From augmented reality & touchscreen consoles
+          to 3D printers — creativity is your only limit.
         </Text>
         <Text style={[styles.benefit, { color: isDark ? '#e2e8f0' : '#1e293b' }]}>
-          • In making global connections — Build networks, gain cultural insights, unique design ideas & unexplored business opportunities.
+          • In making global connections — Build networks, gain cultural insights, unique
+          design ideas & unexplored business opportunities.
         </Text>
         <Text style={[styles.benefit, { color: isDark ? '#e2e8f0' : '#1e293b' }]}>
-          • Among the best — Inspiring ecosystem to hone talents, learn skills, make lifetime friends & prepare for international careers.
+          • Among the best — Inspiring ecosystem to hone talents, learn skills, make
+          lifetime friends & prepare for international careers.
         </Text>
       </View>
 
       {/* Campus life images */}
-      <Image source={{ uri: images.fashionStudio }} style={styles.inlineImage} resizeMode="cover" />
-      <Image source={{ uri: images.groupDiscussion }} style={styles.inlineImage} resizeMode="cover" />
+      {/* African student in creative/design setting */}
+      <Image
+        source={{ uri: images.fashionStudio }}
+        style={styles.inlineImage}
+        resizeMode="cover"
+      />
+      {/* Black students collaborating together */}
+      <Image
+        source={{ uri: images.groupDiscussion }}
+        style={styles.inlineImage}
+        resizeMode="cover"
+      />
 
       {/* Programmes teaser */}
       <Text style={[styles.sectionTitle, { color: isDark ? '#e2e8f0' : '#1e293b' }]}>
@@ -94,10 +128,14 @@ export default function Home({ navigation }) {
         Diplomas & Degrees across creative & professional fields.
       </Text>
 
-      {/* Final campus image */}
-      <Image source={{ uri: images.campusInnovation }} style={styles.heroImage} resizeMode="cover" />
+      {/* Final campus innovation image */}
+      <Image
+        source={{ uri: images.campusInnovation }}
+        style={styles.heroImage}
+        resizeMode="cover"
+      />
 
-      {/* Buttons */}
+      {/* Action Buttons */}
       <View style={styles.buttons}>
         <TouchableOpacity
           style={[styles.btn, { backgroundColor: isDark ? '#1e40af' : '#3b82f6' }]}
@@ -118,7 +156,7 @@ export default function Home({ navigation }) {
           onPress={openWebsite}
         >
           <Text style={styles.btnText}>
-            Learn more about:Limkokwing University of Creative Technology
+            Learn more about Limkokwing University of Creative Technology
           </Text>
         </TouchableOpacity>
       </View>
@@ -144,7 +182,13 @@ const styles = StyleSheet.create({
   benefitTitle: { fontSize: 22, fontWeight: 'bold', textAlign: 'center', marginBottom: 16 },
   benefit: { fontSize: 15, marginBottom: 12, lineHeight: 22 },
   inlineImage: { width: '100%', height: 200, borderRadius: 16, marginVertical: 12 },
-  sectionTitle: { fontSize: 22, fontWeight: '600', marginTop: 32, marginBottom: 16, textAlign: 'center' },
+  sectionTitle: {
+    fontSize: 22,
+    fontWeight: '600',
+    marginTop: 32,
+    marginBottom: 16,
+    textAlign: 'center',
+  },
   programsText: { fontSize: 15, lineHeight: 24, marginBottom: 32 },
   buttons: { width: '100%', alignItems: 'center', marginVertical: 24 },
   btn: {
