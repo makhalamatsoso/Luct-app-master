@@ -52,7 +52,7 @@ const faculties = [
       },
       {
         name: 'Diploma in Fashion and Apparel Design',
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+        image: 'https://img.freepik.com/premium-photo/fashion-design-hd-image-textile-design-hd-image-fashion-designer-hd-image_1012565-18344.jpg?w=2000',
         videoUrl: 'https://www.youtube.com/watch?v=5eMsGAcBsHo',
         description: 'Explore garment construction, fabric science, trend forecasting and fashion illustration. Graduate ready for careers in fashion design, styling and retail.',
         requirements: [
@@ -113,7 +113,7 @@ const faculties = [
       },
       {
         name: 'Diploma in Broadcasting (Radio and TV)',
-        image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600&q=80',
+        image: 'https://www.ypccollege.edu.my/wp-content/uploads/2021/03/DIPLOMA-IN-DIGITAL-MEDIA-AND-BROADASTING_WEB-1.jpg',
         videoUrl: 'https://www.youtube.com/watch?v=8QP6HpFaISc',
         description: 'Master on-air presentation, audio production, programme scheduling and audience engagement for both radio and television platforms.',
         requirements: [
@@ -125,7 +125,7 @@ const faculties = [
       },
       {
         name: 'Diploma in Public Relations',
-        image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80',
+        image: 'https://www.1training.org/wp-content/uploads/2021/04/Advanced-Diploma-in-Public-Relations-Level-3.jpg',
         videoUrl: 'https://www.youtube.com/watch?v=8QP6HpFaISc',
         description: 'Learn media relations, event management, crisis communication and brand storytelling. Build skills to represent organisations with confidence and professionalism.',
         requirements: [
@@ -137,7 +137,7 @@ const faculties = [
       },
       {
         name: 'Diploma in Journalism and Media',
-        image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=80',
+        image: 'https://dsj.uti.ac.tz/courses/DIPLOMA_-_BANNER_350.jpg',
         videoUrl: 'https://www.youtube.com/watch?v=8QP6HpFaISc',
         description: 'Develop investigative, print, online and multimedia journalism skills. Learn to report accurately and ethically in a fast-paced media environment.',
         requirements: [
@@ -210,7 +210,7 @@ const faculties = [
       },
       {
         name: 'Degree in Human Resource Management',
-        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80',
+        image: 'https://www.business-management-degree.net/wp-content/uploads/2023/01/Best-Online-Associates-in-Human-Resources-featured-image.jpg',
         videoUrl: 'https://www.youtube.com/watch?v=0K-r0RMnWjM',
         description: 'Study talent acquisition, organisational behaviour, labour law and people management. Prepare for HR leadership roles across all industries.',
         requirements: [
@@ -292,7 +292,7 @@ const faculties = [
       },
       {
         name: 'Diploma in Hotel Management',
-        image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80',
+        image: 'https://www.ihtsnepal.com/wp-content/uploads/2018/09/dhm-1170x607-1-1024x531.jpg',
         videoUrl: 'https://www.youtube.com/watch?v=h5N_pVvSJ_I',
         description: 'Learn front office operations, housekeeping, food & beverage service and hotel administration. Prepare for management roles in hotels and resorts.',
         requirements: [
