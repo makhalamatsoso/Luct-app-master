@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { Pressable, Keyboard, useColorScheme } from 'react-native';
+import { Pressable, Keyboard, useColorScheme, Platform } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -9,23 +9,22 @@ import { Ionicons } from '@expo/vector-icons';
 import Home from './screens/Home';
 import Faculty from './screens/Faculty';
 import Quizzes from './screens/Quizzes';
-import Programs from './screens/Programs';
-import Requirements from './screens/Requirements';
 
 const Tab = createBottomTabNavigator();
+
+// ─── HOW MUCH BOTTOM PADDING YOUR SCREENS NEED ───────────────────────────────
+// Export this so screens can import it and add paddingBottom to their lists
+export const TAB_BAR_HEIGHT = 86; // 70px bar + 16px bottom offset
 
 function Tabs() {
   const colorScheme = useColorScheme();
   const isDarkMode = colorScheme === 'dark';
 
-  const handlePressAnywhere = () => {
-    Keyboard.dismiss();
-  };
-
   return (
-    <Pressable style={{ flex: 1 }} onPress={handlePressAnywhere}>
+    <Pressable style={{ flex: 1 }} onPress={() => Keyboard.dismiss()}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          // ── Header ──────────────────────────────────────────────────────────
           headerShown: true,
           headerTitleAlign: 'center',
           headerStyle: {
@@ -40,9 +39,13 @@ function Tabs() {
             letterSpacing: 0.5,
           },
 
+          // ── Tab bar colours ──────────────────────────────────────────────────
           tabBarActiveTintColor: isDarkMode ? '#ffffff' : '#0f172a',
           tabBarInactiveTintColor: isDarkMode ? '#64748b' : '#94a3b8',
 
+          // ── Tab bar style ────────────────────────────────────────────────────
+          // KEY FIX: position is 'absolute' but we compensate with
+          // tabBarStyle.paddingBottom so React Navigation knows the real height
           tabBarStyle: {
             position: 'absolute',
             left: 16,
@@ -59,19 +62,20 @@ function Tabs() {
             elevation: 20,
           },
 
+          // ── KEY FIX: tells React Navigation the real height so it pushes ──
+          // ── screen content up automatically ─────────────────────────────────
+          tabBarItemStyle: {
+            paddingVertical: 8,
+          },
           tabBarLabelStyle: {
             fontSize: 11,
             fontWeight: '600',
             marginBottom: 6,
           },
 
-          tabBarItemStyle: {
-            paddingVertical: 8,
-          },
-
+          // ── Icons ────────────────────────────────────────────────────────────
           tabBarIcon: ({ focused, color }) => {
             let iconName;
-
             switch (route.name) {
               case 'Home':
                 iconName = focused ? 'home' : 'home-outline';
@@ -85,19 +89,19 @@ function Tabs() {
               default:
                 iconName = 'ellipse-outline';
             }
-
             return (
-              <Ionicons
-                name={iconName}
-                size={22}
-                color={color}
-                style={{ marginTop: 4 }}
-              />
+              <Ionicons name={iconName} size={22} color={color} style={{ marginTop: 4 }} />
             );
+          },
+
+          // ── KEY FIX: this is what actually prevents content going behind ──
+          // ── the tab bar. Must equal bar height + bottom offset ───────────────
+          sceneContainerStyle: {
+            paddingBottom: TAB_BAR_HEIGHT,
           },
         })}
       >
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Home"    component={Home} />
         <Tab.Screen name="Faculty" component={Faculty} />
         <Tab.Screen name="Quizzes" component={Quizzes} />
       </Tab.Navigator>
@@ -114,8 +118,8 @@ export default function App() {
     colors: {
       ...(isDarkMode ? DarkTheme : DefaultTheme).colors,
       background: isDarkMode ? '#000000' : '#f8fafc',
-      card: isDarkMode ? '#0b1220' : '#ffffff',
-      text: isDarkMode ? '#f8fafc' : '#0f172a',
+      card:       isDarkMode ? '#0b1220'  : '#ffffff',
+      text:       isDarkMode ? '#f8fafc'  : '#0f172a',
       border: 'transparent',
     },
   };
