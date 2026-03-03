@@ -195,7 +195,7 @@ export default function Quizzes({ navigation }) {
           </Text>
 
           <Image
-            source={{ uri: 'https://via.placeholder.com/600x300/003366/FFFFFF?text=Global+Globe+with+Flags+150+Countries' }}
+            source={{ uri: 'https://www.gov.ls/wp-content/uploads/2022/05/limkokwing.jpeg' }}
             style={styles.heroImage}
             resizeMode="cover"
           />
@@ -208,7 +208,7 @@ export default function Quizzes({ navigation }) {
           </Text>
 
           <Image
-            source={{ uri: 'https://via.placeholder.com/600x350/4B0082/FFFFFF?text=Fashion+Studio+Students+Working' }}
+            source={{ uri: 'https://media.proprofs.com/images/QM/user_images/2648979/1592945112.PNG' }}
             style={styles.inlineImage}
             resizeMode="cover"
           />
